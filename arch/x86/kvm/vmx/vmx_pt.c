@@ -762,7 +762,7 @@ void vmx_pt_vmexit(struct vcpu_vmx_pt *vmx_pt){
 }
 
 bool topa_full(struct vcpu_vmx_pt *vmx_pt){
-	if(vmx_pt_get_data_size(vmx_pt) >= TOPA_MAIN_SIZE){
+	if(enabled && vmx_pt && vmx_pt_get_data_size(vmx_pt) >= TOPA_MAIN_SIZE){
 		return true;
 	}
 	return false;
